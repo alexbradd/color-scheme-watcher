@@ -4,7 +4,7 @@ Documentation=https://github.com/alexbradd/color-scheme-watcher
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/color-scheme-watcher.sh
+ExecStart=/bin/bash @PATH_TO_SCRIPT@/color-scheme-watcher.sh --verbose
 
 [Install]
 WantedBy=graphical-session.target

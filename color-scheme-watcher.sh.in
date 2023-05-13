@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MYNAME="color-scheme-watcher.sh"
-MYVER="23.05.0"
+MYVER="@VERSION@"
 HELP="$(cat <<EOF
 Usage: $MYNAME [options]...
 
