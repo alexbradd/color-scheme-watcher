@@ -42,7 +42,7 @@ SCRIPTLETS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/color-scheme-watcher"
 VERBOSE=
 
 log() {
-  if [ -n $VERBOSE ]; then
+  if [ -n "$VERBOSE" ]; then
     echo "$1" 1>&2
   fi
 }
