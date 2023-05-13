@@ -8,7 +8,7 @@ From `color-scheme-watcher.sh --help`:
 ```txt
 Usage: color-scheme-watcher.sh [options]...
 
-Whatch for changes to org.gnome.desktop.interface color-scheme and execute
+Watch for changes to org.gnome.desktop.interface color-scheme and execute
 scriplets.
 
 Scriplets are little programs executed from XDG_DATA_HOME/color-scheme-watcher if
