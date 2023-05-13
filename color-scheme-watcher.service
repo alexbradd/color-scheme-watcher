@@ -1,0 +1,10 @@
+[Unit]
+Description=color-scheme-watcher.sh daemon
+Documentation=https://github.com/alexbradd/color-scheme-watcher
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/color-scheme-watcher.sh
+
+[Install]
+WantedBy=graphical-session.target
