@@ -118,5 +118,9 @@ while true; do
   shift
 done
 
-do_case "color-scheme: $(gsettings get $GSETTINGS_PATH color-scheme)" && \
-  watch_gsettings
+if ! [ -d $SCRIPTLETS_DIR ]; then
+  log ">>> Scriplet dir not found, exiting"
+else
+  do_case "color-scheme: $(gsettings get $GSETTINGS_PATH color-scheme)" && \
+    watch_gsettings
+fi
