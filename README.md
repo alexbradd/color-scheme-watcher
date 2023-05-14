@@ -22,16 +22,15 @@ as input one parameter depending on the value of 'color-scheme': 'light',
 To install it, run:
 
 ```sh
-make DESTDIR=~ install
+sudo make install
 ```
 
-By default, it will install into `~/.local/bin`. If you want to override this
-prefix, run:
+By default, it will install into `/usr/local/bin/`. If you want to install in
+some other place, you'll need to run:
 
 ```sh
-make DESTDIR=my/install/root BIN=/my/bin/ install
+make DESTDIR=my/install/root BIN=/my/bin/ install # with sudo if necessary
 ```
-
 
 ### Using the systemd user unit
 
@@ -39,16 +38,20 @@ To start the daemon at graphical login, I wrote a little systemd user service as
 a starting point. To install it, just run:
 
 ```sh
-make DESTDIR=~ systemd-install
+sudo make systemd-install
 systemctl daemon-reload --user
 systemctl --user enable --now color-scheme-watcher.service
 ```
 
-By default it will install into `~/.config/systemd/user`. Like for the
-installation, you can install the unit using a different install root by running:
+By default it will install into `/usr/local/lib/systemd/user/` and will expect
+the binary to be in the default location.
+
+Like for the installation, you can install the unit using a different place.
+However, you'll need to edit it to execute the script from the correct path.
 
 ```sh
-make DESTDIR=/my/install/root SYSTEMD=/my/systemd/user/dir systemd-install
+vim color-scheme-watcher.service # edit the unit with your editor of choice
+make DESTDIR=/my/install/root SYSTEMD=/my/systemd/user/dir systemd-install # sudo if necessary
 ```
 
 ## Removing it
@@ -59,8 +62,8 @@ Run:
 # Necessary if you have installed the systemd unit
 systemctl --user disable --now color-scheme-watcher.service
 systemctl daemon-reload --user
-make DESTDIR=~ uninstall
+sudo make uninstall
 ```
 
-If you used a different `DESTDIR` and `SYSTEMD` variables, make sure to specify
-them.
+If you used a different `DESTDIR`, `BIN` or `SYSTEMD` variables, make sure to
+specify them.
