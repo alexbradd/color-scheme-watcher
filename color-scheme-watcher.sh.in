@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #
 # color-scheme-watcher.sh, a simple script to watch for changes to 'color-scheme'
 # Copyright (C) 2023  Alexadnru Gabriel Bradatan (alexbradd)
