@@ -23,7 +23,7 @@ install: color-scheme-watcher.sh
 	install -D -m 0755 color-scheme-watcher.sh $(BIN)/color-scheme-watcher.sh
 
 systemd-install: color-scheme-watcher.service
-	install -D -m 0755 color-scheme-watcher.service $(SYSTEMD)/color-scheme-watcher.service
+	install -D -m 0644 color-scheme-watcher.service $(SYSTEMD)/color-scheme-watcher.service
 
 uninstall:
 	-rm -rf $(BIN)/color-scheme-watcher.sh
